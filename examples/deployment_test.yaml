@@ -1,0 +1,11 @@
+suite: deployment test
+templates:
+  - templates/deployment.yaml
+tests:
+  - it: should set replicaCount
+    set:
+      replicaCount: 2
+    asserts:
+      - equal:
+          path: spec.replicas
+          value: 2
